@@ -1,0 +1,20 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pratik.domain.Employee" table="Employee_MTO">
+		<id name="eid" column="EID" type="int" length="10">
+			<generator class="increment"/>
+		</id>
+		<property name="ename" column="ENAME" type="string" length="15"/>
+		<property name="esal" column="ESAL" type="float" length="10" precision="2"/>
+		<many-to-one name="dept"
+					class="com.pratik.domain.Department"
+					cascade="all"
+					column="deptId"
+					lazy="proxy">
+		</many-to-one>
+	</class>
+</hibernate-mapping>
+

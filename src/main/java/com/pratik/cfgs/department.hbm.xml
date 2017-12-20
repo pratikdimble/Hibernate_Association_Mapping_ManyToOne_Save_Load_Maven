@@ -1,0 +1,14 @@
+ <!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.pratik.domain.Department" table="DEPT_MTO">
+		<id name="deptId" column="DEPTID" length="10" type="int">
+			<generator class="sequence">
+      	  		<param name="sequence_name">myseq</param>
+    		</generator>
+		</id>
+		<property name="deptName" column="DEPTNAME" type="string" length="15"/>
+	</class>
+</hibernate-mapping>
